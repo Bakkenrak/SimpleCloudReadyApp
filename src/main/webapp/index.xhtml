@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+    <h:head>  
+        <title>A Simple Cloud-ready Application</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    </h:head>  
+
+    <h:body>
+        <h:panelGroup layout="block" styleClass="container">
+            <h:panelGroup layout="block" styleClass="row">
+                <h:panelGroup layout="block" styleClass="col-md-12">
+                    <h1>Welcome</h1>
+                </h:panelGroup>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="row">
+                <h:panelGroup layout="block" styleClass="col-md-6">
+                    Retrieved persons from database:
+                    <h:dataTable value="#{personCtrl.persons}" var="person"
+                                 styleClass="table table-striped table-hover">
+                        <h:column>
+                            <f:facet name="header">First name</f:facet>
+                                #{person.firstName}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Last name</f:facet>
+                                #{person.lastName}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Age</f:facet>
+                                #{person.age}
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+            </h:panelGroup>
+        </h:panelGroup>
+    </h:body>  
+</html>  
