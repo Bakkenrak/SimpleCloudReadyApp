@@ -6,6 +6,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.example.simplecloudreadyapp.facade.PersonFacade;
+import org.example.simplecloudreadyapp.repository.GenericJpaRepository;
 
 @Named(value = "personCtrl")
 @RequestScoped
@@ -17,7 +18,11 @@ public class PersonController {
     public PersonController() {}
     
     public List<Person> getPersons() {
-        //return new ArrayList<>(Arrays.asList(new Person("Peter", "Fastert", 42)));
         return personFacade.getAllPersons();
+    }
+    
+    public String getDbConnection() {
+        return String.format("Connecting to DB at %s:%s as user %s", 
+                System.getenv(GenericJpaRepository.ADDRESS), System.getenv(GenericJpaRepository.PORT), System.getenv(GenericJpaRepository.USER));
     }
 }

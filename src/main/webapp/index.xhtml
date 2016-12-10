@@ -20,6 +20,7 @@
             </h:panelGroup>
             <h:panelGroup layout="block" styleClass="row">
                 <h:panelGroup layout="block" styleClass="col-md-6">
+                    ${personCtrl.dbConnection} <br />
                     Retrieved persons from database:
                     <h:dataTable value="#{personCtrl.persons}" var="person"
                                  styleClass="table table-striped table-hover">
