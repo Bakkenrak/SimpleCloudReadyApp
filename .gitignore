@@ -1,4 +1,4 @@
 nb-configuration.xml
 /target/
 nbactions.xml
-
+/docker/SimpleCloudReadyApp.war
