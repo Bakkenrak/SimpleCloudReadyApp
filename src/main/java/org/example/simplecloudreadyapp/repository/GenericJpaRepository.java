@@ -10,10 +10,10 @@ import org.slf4j.LoggerFactory;
 
 public abstract class GenericJpaRepository<T> {
     
-    public static final String ADDRESS="MYSQL_ADDRESS";
-    public static final String PORT="MYSQL_PORT";
-    public static final String USER="MYSQL_USER";
-    private static final String PASSWORD="MYSQL_PASSWORD";
+    public static final String ADDRESS="OPENSHIFT_MYSQL_DB_HOST";
+    public static final String PORT="OPENSHIFT_MYSQL_DB_PORT";
+    public static final String USER="OPENSHIFT_MYSQL_DB_USERNAME";
+    private static final String PASSWORD="OPENSHIFT_MYSQL_DB_PASSWORD";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericJpaRepository.class);
 
